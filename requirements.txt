@@ -1,0 +1,3 @@
+Dropbox==1.5.1
+hurry.filesize==0.9
+

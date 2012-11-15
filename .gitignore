@@ -1,0 +1,3 @@
+*.pyc
+dropbox.tokens.txt
+tmp/*
