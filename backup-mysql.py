@@ -42,7 +42,6 @@ except ImportError:
 # - - - - - - - - - - CONFIGURATION OPTIONS! - - - - - - - - - - #
 
 # MySQL login info:
-# TODO: Maybe just read debian-sys-maint since we're running this on Debian?
 MYSQL_ROOT_USER = 'root'
 MYSQL_ROOT_PASS = 'my-root-passsword'
 # I really hope you're using localhost and default port...
@@ -74,7 +73,6 @@ def get_timestamp():
 def do_mysql_backup(tmp_file):
     """Backs up the MySQL server (all DBs) to the specified file"""
     os.system("/usr/bin/mysqldump -u %s -p\"%s\" --opt --all-databases > %s" % (MYSQL_ROOT_USER, MYSQL_ROOT_PASS, TMP_DIR + tmp_file))
-    #os.system("echo 'testing' > %s" % (TMP_DIR + tmp_file))
 
 def connect_to_dropbox():
     """Authorizes the app with Dropbox. Returns False if we can't connect"""
