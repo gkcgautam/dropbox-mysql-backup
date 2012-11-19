@@ -44,7 +44,8 @@ except ImportError:
 # MySQL login info:
 MYSQL_ROOT_USER = 'root'
 MYSQL_ROOT_PASS = 'my-root-passsword'
-# I really hope you're using localhost and default port...
+MYSQL_HOSTNAME  = 'localhost'
+MYSQL_PORT      = 3306
 
 # Dropbox (see documentation on how to do this):
 DROPBOX_KEY     = 'dropbox-app-key'      # Dropbox API Key
@@ -72,7 +73,7 @@ def get_timestamp():
 
 def do_mysql_backup(tmp_file):
     """Backs up the MySQL server (all DBs) to the specified file"""
-    os.system("/usr/bin/mysqldump -u %s -p\"%s\" --opt --all-databases > %s" % (MYSQL_ROOT_USER, MYSQL_ROOT_PASS, TMP_DIR + tmp_file))
+    os.system("/usr/bin/mysqldump -u %s -p\"%s\" -h %s -P %d --opt --all-databases > %s" % (MYSQL_ROOT_USER, MYSQL_ROOT_PASS, MYSQL_HOSTNAME, MYSQL_PORT, TMP_DIR + tmp_file))
 
 def connect_to_dropbox():
     """Authorizes the app with Dropbox. Returns False if we can't connect"""

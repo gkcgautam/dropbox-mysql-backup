@@ -16,6 +16,9 @@ https://github.com/yrosen/dropbox-mysql-backup
       *HAVE* to be the root user, but you'll want a user that has access
       to everything being backed up...
 
+   2. You can also set MYSQL_HOSTNAME and MYSQL_PORT appropiately, if the
+      defaults don't work for you.
+
       NOTE: In a proper production environment, you probably won't want
       auth details like this to be hardcoded. Re-write to whatever works
       for your environment.
@@ -31,6 +34,7 @@ https://github.com/yrosen/dropbox-mysql-backup
 
    3. The next page will give you an "App key" and "App secret" - you'll need
       those for the next step.
+
 
 **C. Add Dropbox app details to backup-mysql.py**
 
