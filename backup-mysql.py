@@ -23,6 +23,7 @@
 import gzip
 import os
 import re
+import socket
 import sys
 import time
 
@@ -55,6 +56,7 @@ DROPBOX_FOLDER  = '/backups/mysql/'      # Folder to use in Dropbox - with trail
 
 # Other Options:
 OPTION_GZIP      = True                  # gzip the resulting SQL file before uploading?
+OPTION_USE_HOST  = True                  # Prepend the system hostname to the output filename?
 
 # - - - - - - - - - - END OF CONFIG OPTIONS! - - - - - - - - - - #
 
@@ -132,8 +134,13 @@ def get_new_dropbox_tokens():
 
 
 def main():
-    MYSQL_TMP_FILE  = 'backup-' + re.sub('[\\/:\*\?"<>\|\ ]', '-', get_timestamp()) + '.sql'
 
+    # Are we prepending hostname to filename?
+    hostname = (socket.gethostname() + '-') if(OPTION_USE_HOST == True) else ''
+
+    MYSQL_TMP_FILE  = re.sub('[\\/:\*\?"<>\|\ ]', '-', hostname + 'backup-' + get_timestamp()) + '.sql'
+
+    # Got final filename, continue on...
     print "Connecting to Dropbox..."
     connect_to_dropbox()
 

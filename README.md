@@ -57,6 +57,11 @@ https://github.com/yrosen/dropbox-mysql-backup
    1. If you'd like, you can set OPTION_GZIP to True - this will compress
       the MySQL file before uploading to Dropbox.
 
+   2. If OPTION_USE_HOST is True, then the system hostname will be prepended to the 
+      backup file name. Useful if you're backing up multiple systems to the same 
+      directory.
+
+
 ## REQUIREMENTS:
 This script needs the Dropbox Python package and hurry.filesize. A requirements.txt is included.
 
