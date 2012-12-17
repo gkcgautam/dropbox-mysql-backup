@@ -134,6 +134,8 @@ def get_new_dropbox_tokens():
 
 
 def main():
+    # Bugfix - without this, it can fail in cron since cron runs from different dir
+    os.chdir(os.path.dirname(sys.argv[0]))
 
     # Are we prepending hostname to filename?
     hostname = (socket.gethostname() + '-') if(OPTION_USE_HOST == True) else ''
