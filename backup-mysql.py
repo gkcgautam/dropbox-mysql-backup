@@ -2,7 +2,7 @@
 """mysql-backup.py: Backups up all MySQL databases and sends them to Dropbox"""
 
 ##
-# Copyright (C) 2012 Yudi Rosen (yudi42@gmail.com)
+# Copyright (C) 2012 Yudi Rosen (yrosen@wireandbyte.com)
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
 # and associated documentation files (the "Software"), to deal in the Software without restriction, 

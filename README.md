@@ -3,9 +3,9 @@ backup-mysql.py is a script to back up your entire MySQL server and store the
 backup in Dropbox. It can also compress the backups using GZip before uploading.
 Run it in cron to have automated backups of your databases.  
 
-By Yudi Rosen (yudi42@gmail.com). MIT license: http://yrosen.mit-license.org/  
+By Yudi Rosen (yrosen@wireandbyte.com). MIT license: http://yrosen.mit-license.org/  
 
-https://github.com/yrosen/dropbox-mysql-backup
+https://github.com/wireandbyte/dropbox-mysql-backup.git
 
 
 ## CONFIGURATION:
